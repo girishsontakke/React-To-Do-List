@@ -7,26 +7,33 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: ""
+      input: "",
+      todos: [],
     };
   }
   onChange = (event) => {
-    this.setState({ todo: event.target.value });
+    this.setState({ input: event.target.value });
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({ todo: "" });
+    this.setState((prevState) => {
+      return {
+        input: "",
+        todos: prevState.todos.concat([prevState.input]),
+      };
+    });
   };
+
   render() {
     return (
       <>
         <Header
           handleSubmit={this.handleSubmit}
           handleOnChange={this.onChange}
-          value={this.state.todo}
+          value={this.state.input}
           placeholder="Add items"
         />
-        <Main />
+        <Main todos={this.state.todos} />
       </>
     );
   }
