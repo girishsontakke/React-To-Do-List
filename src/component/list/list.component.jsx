@@ -2,6 +2,6 @@ import React from "react";
 
 import "./list.styles.scss";
 
-const List = (props) => <li></li>;
+const List = ({ todo }) => <li>{todo}</li>;
 
 export default List;

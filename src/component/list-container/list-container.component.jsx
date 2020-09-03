@@ -6,7 +6,7 @@ import List from "../list/list.component";
 const ListContainer = ({ todos }) => (
   <ul>
     {todos.map((todo, index) => (
-      <List key={index}> {todo} </List>
+      <List key={index} todo={todo} />
     ))}
   </ul>
 );

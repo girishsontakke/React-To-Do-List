@@ -8,10 +8,7 @@ const Header = ({ handleSubmit, ...otherProps }) => (
   <div className="header">
     <form className="form" onSubmit={handleSubmit}>
       <InputField type="text" id="to-do" {...otherProps} className="input" />
-      <CustomButton type="submit" className="label">
-        {" "}
-        Add{" "}
-      </CustomButton>
+      <CustomButton type="submit"> Add </CustomButton>
     </form>
   </div>
 );
