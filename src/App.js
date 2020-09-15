@@ -16,12 +16,10 @@ class App extends React.Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState((prevState) => {
-      return {
-        input: "",
-        todos: prevState.todos.concat([prevState.input]),
-      };
-    });
+    this.setState((prevState) => ({
+      input: "",
+      todos: [prevState.input, ...prevState.todos],
+    }));
   };
 
   render() {
