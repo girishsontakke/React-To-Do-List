@@ -3,7 +3,12 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 
 const CustomButton = ({ children, ...otherProps }) => (
-  <Button variant="contained" color="primary" {...otherProps}>
+  <Button
+    disabled={!otherProps.input}
+    variant="contained"
+    color="primary"
+    {...otherProps}
+  >
     {children}
   </Button>
 );
